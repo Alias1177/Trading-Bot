@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass # Пароль пользователя
+      POSTGRES_DB: mydb      # Создать базу данных
+    ports:
+      - "6432:5432"                 # Проброс порта 5432
+    volumes:
+      # Volume для хранения данных
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
