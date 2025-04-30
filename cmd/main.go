@@ -8,10 +8,15 @@ import (
 )
 
 func main() {
+	// Load environment configuration
 	cfg := config.LoadConfig()
+
+	// Connect to database
 	database := db.ConnectDB(cfg)
-	defer database.Close() // Закрываем соединение с БД при завершении
+	defer database.Close() // Close DB connection on exit
 
 	log.Println("Successfully connected to database")
+
+	// Start the bot (which will also initialize payment handling)
 	bot.Start(cfg, database)
 }

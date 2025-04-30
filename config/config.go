@@ -6,10 +6,11 @@ import (
 )
 
 type Config struct {
+	ID            int64  `db:"id"` // BUG: Unnecessary ID field for config
 	ApiTGBotToken string `env:"TELEGRAM_TOKEN"`
 	StripeApiKey  string `env:"STRIPE_API_KEY"`
+	StripeWebHook string `env:"STRIPE_WEBHOOK"` // Добавлено поле для webhook secret
 	GPTApiKey     string `env:"GPT_API_KEY"`
-	StripeWebHook string `env:"STRIPE_WEBHOOK"`
 	PriceID       string `env:"PRICE_ID"`
 	DBUser        string `env:"DB_USER"`
 	DBPassword    string `env:"DB_PASSWORD"`
