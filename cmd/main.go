@@ -8,11 +8,11 @@ import (
 
 func main() {
 	// Load environment configuration
-	//cfg := config.LoadConfig()
+	cfg := config.LoadConfig()
 	//
 	//// Connect to database
-	//database := db.ConnectDB(cfg)
-	//defer database.Close() // Close DB connection on exit
+	database := db.ConnectDB(cfg)
+	defer database.Close() // Close DB connection on exit
 	//
 	//log.Println("Successfully connected to database")
 	//
@@ -36,5 +36,5 @@ func main() {
 
 	prompt := gpt.FormatPrompt(closes, rsi, ema, currentVol, avgVol)
 	//fmt.Println("📤 Prompt to model:\n", prompt)
-	gpt.AskGPT(prompt)
+	gpt.AskGPT(prompt,cfg)
 }

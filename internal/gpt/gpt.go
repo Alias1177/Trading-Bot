@@ -27,8 +27,8 @@ func FormatPrompt(closes []float64, rsi float64, ema50 float64, currentVol float
 `, closes[len(closes)-2], closes[len(closes)-1], trend, rsi, ema50, currentVol, avgVol)
 }
 
-func AskGPT(prompt string) {
-	client := openai.NewClient("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") // вставь свой ключ
+func AskGPT(prompt string,cfg *config.Config) {
+	client := openai.NewClient(cfg.GPTApiKey ) // вставь свой ключ
 	resp, err := client.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
