@@ -7,6 +7,7 @@ require (
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/jmoiron/sqlx v1.4.0
 	github.com/lib/pq v1.10.9
+	github.com/sashabaranov/go-openai v1.39.0
 	github.com/stripe/stripe-go/v76 v76.25.0
 )
 

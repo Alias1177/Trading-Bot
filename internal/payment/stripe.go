@@ -43,8 +43,8 @@ func NewStripeService(cfg *config.Config, db *sqlx.DB, notificationCh chan model
 		db:              db,
 		notificationCh:  notificationCh,
 		priceMap:        priceMap,
-		successRedirect: "https://t.me/your_bot_username", // Replace with your bot username
-		cancelRedirect:  "https://t.me/your_bot_username", // Replace with your bot username
+		successRedirect: "https://t.me/TestPoolVBot", // Replace with your bot username
+		cancelRedirect:  "https://t.me/TestPoolVBot", // Replace with your bot username
 	}
 }
 
